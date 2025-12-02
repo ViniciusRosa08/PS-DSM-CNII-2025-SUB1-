@@ -8,7 +8,7 @@ import AdminRentals from './pages/AdminRentals';
 import CustomerPortal from './pages/CustomerPortal';
 import { initializeAzureResources } from './services/azure';
 
-const ProtectedRoute = ({ children, requiredRole }: { children: React.ReactElement, requiredRole?: 'ADMIN' }) => {
+const ProtectedRoute = ({ children, requiredRole }: { children?: React.ReactNode, requiredRole?: 'ADMIN' }) => {
     const role = localStorage.getItem('userRole');
     
     if (!role) {
@@ -19,7 +19,7 @@ const ProtectedRoute = ({ children, requiredRole }: { children: React.ReactEleme
         return <Navigate to="/customer/browse" replace />; // Redirect non-admins
     }
 
-    return children;
+    return <>{children}</>;
 };
 
 const App: React.FC = () => {
