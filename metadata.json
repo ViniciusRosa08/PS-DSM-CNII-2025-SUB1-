@@ -1,0 +1,5 @@
+{
+  "name": "TurboCloud Rentals",
+  "description": "A comprehensive car rental management system integrating Azure Blob Storage for vehicle imagery and Azure Table Storage for data persistence.",
+  "requestFramePermissions": []
+}
